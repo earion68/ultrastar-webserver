@@ -90,18 +90,18 @@ def handle_song_request(request):
 
     # Retrieve TimesPlayed from us_songs table
     query = USSong.query
-    us_songs = query.all()
-    us_songs = [model_to_dict(song) for song in us_songs]
+    #us_songs = query.all()
+    #us_songs = [model_to_dict(song) for song in us_songs]
     songs = [model_to_dict(song) for song in songs]
 
     for song in songs:
         match_found = False  # Flag variable to track if a match is found
-        for us_song in us_songs:
-            if us_song["artist"].rstrip('\x00') == song["artist"] and us_song["title"].rstrip('\x00') == song["title"]:
-                print(f"match found for {song['artist']} - {song['title']}")
-                song["times_played"] = us_song["TimesPlayed"]
-                match_found = True
-                break  # Break out of the inner loop
+        #for us_song in us_songs:
+        #    if us_song["artist"].rstrip('\x00') == song["artist"] and us_song["title"].rstrip('\x00') == song["title"]:
+        #        print(f"match found for {song['artist']} - {song['title']}")
+        #        song["times_played"] = us_song["TimesPlayed"]
+        #        match_found = True
+        #        break  # Break out of the inner loop
         if not match_found:
             song["times_played"] = 0
     
