@@ -9,7 +9,7 @@ load_dotenv()
 SONGFOLDER = os.getenv('SONGFOLDER')
 
 # Configure the SQLAlchemy engine
-engine = create_engine('sqlite:/srv/ultrastar-web/songs.db')
+engine = create_engine('sqlite:///srv/ultrastar-web/songs.db')
 
 # Create a session factory
 Session = sessionmaker(bind=engine)
