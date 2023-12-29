@@ -56,6 +56,10 @@ def index_songs():
                 for folder_file in os.listdir(root):
                     if folder_file.endswith('.txt'):
                         txt_path = os.path.join(root, folder_file)
+                        title = '[Inconnu]'
+                        artist = '[Inconnu]'
+                        language = '[Inconnu]'
+                        year = '[Inconnu]'
                         # open file
                         with open(txt_path, 'r', encoding='ISO-8859-1') as txt_file:
                             # read lines
