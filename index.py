@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
+import chardet
 
 load_dotenv()
 SONGFOLDER = os.getenv('SONGFOLDER')
@@ -61,8 +62,11 @@ def index_songs():
                         artist = '[Inconnu]'
                         language = '[Inconnu]'
                         year = '[Inconnue]'
+                        encoding = 'ISO-8859-1'
                         # open file
-                        with open(txt_path, 'r',) as txt_file:
+                         with open(txt_path, 'rb') as rawdata:
+                            encoding = chardet.detect(rawdata.read())
+                        with open(txt_path, 'r',encoding=encoding) as txt_file:
                             # read lines
                             lines = txt_file.readlines()
                             # search for metadata (probably in the first 20 lines)
@@ -96,8 +100,6 @@ def index_songs():
                             session.add(song)
                             added += 1
                         count += 1
-                    else:
-                        print('folder ' + mp3_path + 'not added')
                 if batch == 0:
                     print(f"processed {count} songs...")
                     batch = 500
