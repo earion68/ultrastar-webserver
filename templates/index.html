@@ -45,24 +45,23 @@
         <table id="selection" class="w-full">
             <thead>
                 <tr>
-                    <th class="px-4 py-2">ARTIST</th>
-                    <th class="px-4 py-2">TITLE</th>
-                    <th class="px-4 py-2">MP3</th>
-                    <th class="px-4 py-2">YEAR</th>
+                    <th class="px-4 py-2">ARTISTE</th>
+                    <th class="px-4 py-2">TITRE</th>
+                    <th class="px-4 py-2">AJ/SUP</th>
+                    <th class="px-4 py-2">ANNEE</th>
                     <th class="px-4 py-2">TIMES PLAYED</th>
                 </tr>
             </thead>
             <tbody id="selection2"/>
         </table>
         <p class="mb-2 text-white">Showing {{ songs|length }} songs.</p>
-        <p class="mb-4 text-white">Click on the "Preview" button to play the song.</p>
         <table id="allsongs" class="w-full">
             <thead>
                 <tr>
-                    <th class="px-4 py-2">ARTIST</th>
-                    <th class="px-4 py-2">TITLE</th>
-                    <th class="px-4 py-2">MP3</th>
-                    <th class="px-4 py-2">YEAR</th>
+                    <th class="px-4 py-2">ARTISTE</th>
+                    <th class="px-4 py-2">TITRE</th>
+                    <th class="px-4 py-2">AJ/SUP</th>
+                    <th class="px-4 py-2">ANNEE</th>
                     <th class="px-4 py-2">TIMES PLAYED</th>
                 </tr>
             </thead>
@@ -120,7 +119,7 @@ $(document).ready(function() {
                         // Create and append table cells for each song property
                         $('<td></td>').text(song.artist).appendTo(row);
                         $('<td></td>').text(song.title).appendTo(row);
-                        $('<td></td>').html('<button class="preview bg-blue-500 text-white px-4 py-2 rounded-md" mp3_path="' + song.mp3_path + '">Preview</button>').appendTo(row);
+                        $('<td></td>').html('<button class="ajouter bg-blue-500 text-white px-4 py-2 rounded-md" mp3_path="' + song.mp3_path + '">Ajouter</button>').appendTo(row);
                         $('<td></td>').text(song.year).appendTo(row);
                         $('<td></td>').text(song.times_played).appendTo(row);
 
