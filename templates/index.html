@@ -170,25 +170,6 @@ $(document).ready(function() {
         song.appendTo(dest_table);
 
         localStorage.setItem('ultrastar-selection',dest_table.innerHTML);
-
-        
-        // load the audio file from /api/mp3 using mp3_path as a argument
-        //var mp3_path = $(this).attr('mp3_path');
-        //var audio = new Audio('/api/mp3?mp3_path=' + mp3_path);
-
-        // If there is a currently playing audio file, stop it
-        //if (currentAudio) {
-        //    currentAudio.pause();
-        //}
-
-        // Play the new audio file
-        //audio.play();
-
-        // Set the current audio file to the new audio file
-        //currentAudio = audio;
-
-        // Prevent the default button click behavior
-        //return false;
     });
 
 });
