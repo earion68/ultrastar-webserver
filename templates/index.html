@@ -86,6 +86,7 @@ $(document).ready(function() {
 
     function resetSelection() {
         localStorage.setItem('ultrastar-selection','');
+        restoreSelection();
     }
     
     function restoreSelection() {
@@ -154,8 +155,7 @@ $(document).ready(function() {
 
     $(document).on('click', '#reset', function() {
         resetSelection();
-        restoreSelection();
-    }
+    });
 
     // Handle preview button click event
     $(document).on('click', '.preview', function() {
