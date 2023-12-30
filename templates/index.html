@@ -52,7 +52,7 @@
                     <th class="px-4 py-2">TIMES PLAYED</th>
                 </tr>
             </thead>
-            <tbody/>
+            <tbody id="selection2"/>
         </table>
         <p class="mb-2 text-white">Showing {{ songs|length }} songs.</p>
         <p class="mb-4 text-white">Click on the "Preview" button to play the song.</p>
@@ -152,7 +152,7 @@ $(document).ready(function() {
 
     // Handle preview button click event
     $(document).on('click', '.preview', function() {
-        dest_table = document.getElementById('selection');
+        dest_table = document.getElementById('selection2');
         song = $(this).closest('tr');
         dest_table.append(song);
 
