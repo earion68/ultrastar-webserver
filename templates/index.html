@@ -152,9 +152,11 @@ $(document).ready(function() {
 
     // Handle preview button click event
     $(document).on('click', '.preview', function() {
-        dest_table = document.getElementById('selection2');
-        song = $(this).closest('tr');
-        dest_table.append(song);
+        var dest_table = document.getElementById('selection2');
+        var row = $('<tr></tr>');
+        var song = $(this).closest('tr');
+        song.appendTo(row);
+        row.appendTo(dest_table);
 
         
         // load the audio file from /api/mp3 using mp3_path as a argument
