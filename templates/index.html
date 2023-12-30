@@ -152,7 +152,7 @@ $(document).ready(function() {
 
     // Handle scrolling to the bottom of the page
     $(window).scroll(function() {
-        var threshold = 500; // Adjust this value to define the threshold distance from the bottom
+        var threshold = 1000; // Adjust this value to define the threshold distance from the bottom
 
         if ($(window).scrollTop() + $(window).height() >= $(document).height() - threshold) {
             loadSongs();
