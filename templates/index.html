@@ -91,6 +91,13 @@ $(document).ready(function() {
     var limit = 1000;
     var offset = limit;
 
+    function restoreSelection() {
+        var dest_table = document.getElementById('selection2');
+        dest_table.innerHTML(localStorage.getItem('ultrastar-selection'));
+    }
+
+    restoreSelection();
+
     function loadSongs() {
         if (isLoading) {
             return;
@@ -154,6 +161,8 @@ $(document).ready(function() {
         var dest_table = document.getElementById('selection2');
         var song = $(this).closest('tr');
         song.appendTo(dest_table);
+
+        localStorage.setItem('ultrastar-selection',dest_table);
 
         
         // load the audio file from /api/mp3 using mp3_path as a argument
