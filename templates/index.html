@@ -93,7 +93,8 @@ $(document).ready(function() {
 
     function restoreSelection() {
         var dest_table = document.getElementById('selection2');
-        dest_table.innerHTML = localStorage.getItem('ultrastar-selection');
+        var data = localStorage.getItem('ultrastar-selection');
+        data.appendTo(dest_table);
     }
 
     restoreSelection();
