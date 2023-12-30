@@ -164,7 +164,7 @@ $(document).ready(function() {
         var song = $(this).closest('tr');
         song.appendTo(dest_table);
 
-        localStorage.setItem('ultrastar-selection',dest_table);
+        localStorage.setItem('ultrastar-selection',dest_table.innerHTML);
 
         
         // load the audio file from /api/mp3 using mp3_path as a argument
