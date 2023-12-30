@@ -46,7 +46,7 @@ def index_songs():
     added = 0
     for root, dirs, files in os.walk(SONGFOLDER):
         for file in files:
-            if file.endswith('.mp3'):
+            if file.lower().endswith('.mp3'):
                 batch -= 1
                 # get relative path for api route later
                 mp3_path = os.path.join(root, file).replace(SONGFOLDER, '')
@@ -55,14 +55,14 @@ def index_songs():
                 # the name of the txt file is NOT the same as the mp3 file, so replacing the extension is not enough
                 # get folder name
                 for folder_file in os.listdir(root):
-                    if folder_file.endswith('.txt'):
+                    if folder_file.lower().endswith('.txt'):
                         txt_path = os.path.join(root, folder_file)
                         title = '[Inconnu]'
                         artist = '[Inconnu]'
                         language = '[Inconnu]'
-                        year = '[Inconnu]'
+                        year = '[Inconnue]'
                         # open file
-                        with open(txt_path, 'r', encoding='ISO-8859-1') as txt_file:
+                        with open(txt_path, 'r',) as txt_file:
                             # read lines
                             lines = txt_file.readlines()
                             # search for metadata (probably in the first 20 lines)
@@ -96,6 +96,8 @@ def index_songs():
                             session.add(song)
                             added += 1
                         count += 1
+                    else:
+                        print('folder ' + mp3_path + 'not added')
                 if batch == 0:
                     print(f"processed {count} songs...")
                     batch = 500
