@@ -39,7 +39,7 @@ UltraStar Web Server is a web application that provides an interface for browsin
 1. Run `poetry run python index.py` to load your songs into the SQLite database.
 2. This will create a file called songs.db in the specified path from your `.env` This file is used by the server to serve your songs.
 
-### the Server
+### Start the Server
 
 1. Run `poetry run flask run --host=0.0.0.0` in the project directory.
 2. This will start the server on port 5000 and make it accessible from any device on your local network.
