@@ -154,7 +154,7 @@ $(document).ready(function() {
     $(document).on('click', '.preview', function() {
         dest_table = document.getElementById('selection');
         song = $(this).closest('tr');
-        dest_table.appendChild(song);
+        dest_table.append(song);
 
         
         // load the audio file from /api/mp3 using mp3_path as a argument
