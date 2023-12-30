@@ -66,6 +66,7 @@ def index_songs():
                         # open file
                         with open(txt_path, 'rb') as rawdata:
                             encoding = chardet.detect(rawdata.read())
+                        print(encoding['encoding'])
                         with open(txt_path, 'r',encoding=encoding['encoding']) as txt_file:
                             # read lines
                             lines = txt_file.readlines()
