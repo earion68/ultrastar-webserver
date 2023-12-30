@@ -41,6 +41,7 @@
             </div>
         </form>
         <p class="mb-2 text-white">Votre sélection.</p>
+        <button id="reset" class="preview bg-blue-500 text-white px-4 py-2 rounded-md" mp3_path="' + song.mp3_path + '">Effacer</button>
         <table id="selection" class="w-full">
             <thead>
                 <tr>
@@ -151,6 +152,10 @@ $(document).ready(function() {
         }
     });
 
+    $(document).on('click', '#reset', function() {
+        resetSelection();
+        restoreSelection();
+    }
 
     // Handle preview button click event
     $(document).on('click', '.preview', function() {
