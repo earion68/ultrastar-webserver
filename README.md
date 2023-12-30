@@ -13,8 +13,8 @@ UltraStar Web Server is a web application that provides an interface for browsin
 ## Installation
 
 1. Install [Poetry](https://python-poetry.org/docs/#installation) if you haven't already.
-2. Clone this repository: `git clone https://github.com/your_username/ultrastar-web-server.git`
-3. Navigate to the project directory: `cd ultrastar-web-server`
+2. Clone this repository: `git clone https://github.com/earion68/ultrastar-web.git`
+3. Navigate to the project directory: `cd ultrastar-web`
 4. Run `poetry install` to install all dependencies.
 
 ## Configuration
@@ -24,8 +24,8 @@ UltraStar Web Server is a web application that provides an interface for browsin
    ```
    QR_URL=http://your_local_ip_address:5000
    SONGFOLDER=path_to_your_songs_directory
-   SONG_DB=sqlite:///path_to_your_songs.db_file
-   ULTRASTAR_DB=sqlite:///path_to_your_ultrastar_database_file
+   SONG_DB=sqlite:////path_to_your_songs.db_file
+   ULTRASTAR_DB=sqlite:////path_to_your_ultrastar_database_file
    ```
 
    Replace `your_local_ip_address` with your computer's local IP address, `path_to_your_songs_directory` with the path to your UltraStar Deluxe songs folder, and `path_to_your_songs.db_file` and `path_to_your_ultrastar_database_file` with the paths to your desired SQLite database files.
@@ -36,7 +36,7 @@ UltraStar Web Server is a web application that provides an interface for browsin
 
 ### Indexing Songs
 
-1. Run poetry run python `index.py` to load your songs into the SQLite database.
+1. Run `poetry run python index.py` to load your songs into the SQLite database.
 2. This will create a file called songs.db in the specified path from your `.env` This file is used by the server to serve your songs.
 
  the Server
@@ -59,6 +59,7 @@ Pull requests are welcome! If you have any ideas for new features or improvement
 
 ## Features
 
+- [x] Add a "Select" (cart-like) feature
 - [ ] Add a "Star" feature
 - [ ] Add a "Recently Played" feature
 - [ ] Add a "Recently Added" feature
