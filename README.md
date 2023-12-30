@@ -59,6 +59,7 @@ ULTRASTAR_DB=sqlite:////usdx/Ultrastar.db
 docker run --rm -v ./.env:/ultrastar/.env -v ~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx:/usdx --entrypoint poetry -it ultrastar-webserver run python index.py
 ```
 Replace `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx` with the folder that contains your Ultrastar.db. If you're using flatpak, the given path is fine.
+
 4. Start the Webserver: 
 ```
 docker run --rm -v ./.env:/ultrastar/.env -v ~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx:/usdx -p 5000:5000 -it ultrastar-webserver
@@ -75,7 +76,7 @@ Pull requests are welcome! If you have any ideas for new features or improvement
 
 ## Usability
 
-- [ ] Add a Dockerfile
+- [x] Add a Dockerfile
 - [x] Make SONGFOLDER configurable
 - [x] Add a config file
 - [ ] Pack as an executable
