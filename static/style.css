@@ -61,3 +61,14 @@ th {
 .preview:hover {
     background-color: #2563EB;
 }
+
+
+.reset {
+    background-color: #A52A2A;
+    padding: 2px 8px;
+    font-size: 14px;
+}
+
+.reset:hover {
+    background-color: #8B0000;
+}
