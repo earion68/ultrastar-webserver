@@ -42,10 +42,21 @@
                 </div>
             </div>
         </form>
-
+        <table id="selection" class="w-full">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">ARTIST</th>
+                    <th class="px-4 py-2">TITLE</th>
+                    <th class="px-4 py-2">MP3</th>
+                    <th class="px-4 py-2">YEAR</th>
+                    <th class="px-4 py-2">TIMES PLAYED</th>
+                </tr>
+            </thead>
+            <tbody/>
+        </table>
         <p class="mb-2 text-white">Showing {{ songs|length }} songs.</p>
         <p class="mb-4 text-white">Click on the "Preview" button to play the song.</p>
-        <table class="w-full">
+        <table id="allsongs" class="w-full">
             <thead>
                 <tr>
                     <th class="px-4 py-2">ARTIST</th>
