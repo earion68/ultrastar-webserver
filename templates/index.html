@@ -24,7 +24,7 @@
                 <tr>
                     <th class="px-4 py-2">ARTISTE</th>
                     <th class="px-4 py-2">TITRE</th>
-                    <th class="px-4 py-2">AJ/SUP</th>
+                    <th class="px-4 py-2">SÉLECTION</th>
                 </tr>
             </thead>
             <tbody id="selection2"/>
@@ -68,7 +68,7 @@
                 <tr>
                     <th class="px-4 py-2">ARTISTE</th>
                     <th class="px-4 py-2">TITRE</th>
-                    <th class="px-4 py-2">SELECTION</th>
+                    <th class="px-4 py-2">SÉLECTION</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,9 +122,14 @@ $(document).ready(function() {
     function restoreSelection() {
         var dest_table = document.getElementById('selection2');
         var data = localStorage.getItem('ultrastar-selection');
-        console.log(data);
+        //console.log(data);
         dest_table.innerHTML = data;
     }
+	
+	function saveCurrentSelection() {
+	    var dest_table = document.getElementById('selection2');
+		localStorage.setItem('ultrastar-selection',dest_table.innerHTML);
+	}
 
     restoreSelection();
 
@@ -146,7 +151,7 @@ $(document).ready(function() {
             },
             success: function(data) {
                 var songs = data.songs;
-                console.log(songs.length + ' songs loaded')
+                //console.log(songs.length + ' songs loaded')
 
                 if (songs.length > 0) {
                     for (var i = 0; i < songs.length; i++) {
@@ -191,9 +196,23 @@ $(document).ready(function() {
     $(document).on('click', '.preview', function() {
         var dest_table = document.getElementById('selection2');
         var song = $(this).closest('tr');
-        song.appendTo(dest_table);
-
-        localStorage.setItem('ultrastar-selection',dest_table.innerHTML);
+		var button = $(this).closest('td')[0];
+		button.innerHTML = '<button class="delete text-white px-4 py-2 rounded-md">Supprimer</button>';
+        console.log(button);
+		song.appendTo(dest_table);
+		
+		saveCurrentSelection();
+    });
+	
+	$(document).on('click', '.delete', function() {
+        var dest_table = document.getElementById('allsongs');
+        var song = $(this).closest('tr');
+		var button = $(this).closest('td')[0];
+		button.innerHTML = '<button class="preview bg-blue-500 text-white px-4 py-2 rounded-md">Ajouter</button>';
+        console.log(button);
+		song.appendTo(dest_table);
+		
+		saveCurrentSelection();
     });
 
 });
